@@ -1,0 +1,52 @@
+.sell_table,.buy_table{
+	width: 100%;
+}
+.sell_table th,.buy_table th{
+	padding: 4px;
+	text-align: center;
+	font-size: 11px;
+	color:#5d5d5d;;
+}
+.sell_table td,.buy_table td{
+	padding: 4px;
+	text-align: center;
+	font-size: 10px;
+}
+.dataTables_length{
+	display: none;
+}
+.dataTables_filter input[type='search']{
+	height: 25px;
+}
+.fila{
+	padding-left:35px;padding-top:10px;
+}
+.img-widh{
+	width:28px;
+}
+.col-per{
+	margin: 80px 0px;padding: 0px 25px;
+}
+
+ @media all and (min-width: 482px){
+	.fila{
+		padding-left:50px;padding-top:10px;
+	}
+	.img-widh{
+		width:48px;
+	}
+	.col-per{
+		margin: 80px 0px;padding: 0px 34px;
+	}
+ }
+ @media all and (min-width: 700px){
+	.fila{
+		padding-left:70px;padding-top:10px;
+	}
+	.img-widh{
+		width:48px;
+	}
+	.col-per{
+		margin: 80px 0px;padding: 0px 60px;
+	}
+ }

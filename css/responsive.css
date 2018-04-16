@@ -1,0 +1,112 @@
+
+@media screen and (max-width:1242px) {
+.sub-title span {
+	font-size: 18px;
+}
+.main-title span {
+	font-size: 20px;
+}
+.card {
+	margin-bottom: 15px;
+}
+.stock-img {
+	width: 30px;
+}
+.gxvc-tabel th {
+	width: 55%;
+}
+.gxvc-tabel td {
+	width: 45%;
+}
+#chartdiv {
+	height: 276px !important;
+}
+.gxvc-stock {
+	min-height: 335px;
+}
+}
+
+@media screen and (max-width:1142px) {
+.sub-title span, .gxvc-stock .main-title span {
+	font-size: 16px;
+}
+.gxvc-tabel td, .gxvc-tabel th {
+	width: 50%;
+}
+.gxvc-tabel th {
+	font-size: 15px;
+}
+}
+
+@media screen and (max-width:992px) {
+.naviagtion-dots {
+	left: 76px;
+}
+}
+
+@media screen and (max-width:767px) {
+.naviagtion-dots {
+	display: none;
+}
+.nav.nav-sidebar.nav-bottom {
+	position: static;
+}
+}
+
+@media screen and (max-width:480px) {
+.sidebar, .nav.nav-sidebar.nav-bottom {
+	width: 50px;
+}
+.card-mb-3, .exchange-graph {
+	padding: 20px 0% 20px 15%;
+}
+.card-mb-3 .container-fluid, .exchange-graph .container-fluid {
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.nav-sidebar li a {
+	font-size: 20px;
+	padding: 10px 0px;
+}
+.stock-graph h2 {
+	padding-left: 0px;
+}
+.main-title span, .gxvc-stock .main-title span {
+	font-size: 16px;
+}
+.sub-title span {
+	font-size: 14px;
+}
+.stock-tabs {
+	padding-left: 0;
+	padding-top: 5px;
+}
+.alerts .pre {
+	margin-left: 15px;
+}
+.icon-img {
+	background-position: 10px 0px !important;
+	background-size: 20px !important;
+	height: 20px;
+}
+.icon-img.bell {
+	background: url('../images/alert.png')no-repeat;
+	background-position: 10px -24px !important;
+}
+.icon-img.chart {
+	background: url('../images/graph-all.png')no-repeat;
+	background-position: 10px -18px !important;
+}
+.icon-img.comment {
+	background: url('../images/comment.png')no-repeat;
+	background-position: 10px 0px !important;
+}
+.icon-img.gear {
+	background: url('../images/gear.png')no-repeat;
+	background-position: 10px -24px !important;
+}
+.icon-img.eye {
+	background: url('../images/eye.png')no-repeat;
+	background-position: 10px -16px !important;
+}
+}

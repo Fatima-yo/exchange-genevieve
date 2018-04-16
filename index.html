@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Genevieve Exchange - Alpha release</title>
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/style.css"  type="text/css" media="all" />
+<link rel="stylesheet" href="css/responsive.css"  type="text/css" media="all" />
+<link rel="stylesheet" href="css/custom.css"  type="text/css" media="all" />
+<script src="js/highstock.js"></script>
+<script src="js/exporting.js"></script>
+
+<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"> -->
+<style type="text/css">
+
+.dataTables_wrapper td{
+  padding:2px 2px;
+  color:black;
+}
+.dataTables_wrapper thead{
+  /*padding:2px 2px;*/
+  color:white;
+}
+
+</style>
+</head>
+<body>
+<!-- sidebar navigation -->
+<div id="sidenav" class="col-sm-1 col-md-1 sidebar">
+  <div class="navigation">
+    <ul class="nav nav-sidebar">
+      <li class="logo"><a href="#"><img class="img-fluid" src="images/sidebar-logo.png" id="contractAddress" alt="#"></a></li>
+      <li><a href="#"><span class="icon-img home"></span></a></li>
+      <li><a class="alerts" href="#"><span class="pre">15</span><span class="icon-img bell"></span></a></li>
+      <li class="active"><a href="#"><span class="icon-img chart"></span></a></li>
+      <li><a href="help.html"><span class="icon-img comment"></span></a></li>
+    </ul>
+    <ul class="nav nav-sidebar nav-bottom">
+      <li><a href="#"><span class="icon-img gear"></span></a></li>
+      <li class="colored"><a href="#"><span class="icon-img eye"></span></a></li>
+    </ul>
+  </div>
+</div>
+<ul class="naviagtion-dots">
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a class="active" href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+</ul>
+<!--  exchange graph section-->
+<section class="exchange-graph">
+  <div class="container-fluid">
+    <div class="row">
+<!-- End of ethernitylivehelp Zendesk Widget script -->
+	  <div class="col-lg-9">
+        <div class="stock-tabs">
+          <div class="tabbable" id="tabs-113515">
+            <div class="tab-content stock-graph">
+              <div class="tab-pane active" id="panel-364342">
+                <h2 class="main-title"><span><span class="currentTokenOne"></span> <i>/</i> <span class="currentTokenTwo"></span> <i>Change Pairing</i></span></h2>
+                <div style="width: 100%; height: 299px;padding:10px">
+                  <p>
+                    <span class="form-group">
+                      <label for="" style="color:white">Please Select Pair</label>
+                      <select name="" class='form-control' id="pair">
+                        
+                      </select>
+                    </span>
+                  </p>    
+                  <br>
+                  <p>
+                    <ul>
+                      <li><a href="http://54.203.134.249:9093/gxe" target="_blank" style="color:white;padding: 20px;margin-top: 20px">explorer link <u>GXE</u></a></li>
+                      <li><a href="http://54.203.134.249:9093/gxvc" target="_blank" style="color:white;padding: 20px">explorer link <u>GXVC</u></a></li>
+                    </ul>
+                  </p>              
+
+                </div>
+
+              </div>
+              <div class="tab-pane" id="panel-508674">
+                <h2 class="main-title"><span><span class="currentTokenOne"></span> <i>/</i> <span class="currentTokenTwo"></span> <i>Exchange</i></span></h2>
+                <div id="chartdiv1" style="width: 100%; height: 299px;"></div>
+              </div>
+              <div class="tab-pane" id="panel-508675">
+                <h2 class="main-title"><span><span class="currentTokenOne"></span> <i>/</i> <span class="currentTokenTwo"></span> <i>Exchange</i></span></h2>
+                <div id="chartdiv2" style="width: 100%; height: 299px;"></div>
+              </div>
+              <div class="tab-pane" id="panel-508676">
+                <h2 class="main-title"><span>Order Books</span></h2>
+                <div id="orders_results" style="width: 100%; height: 299px;overflow-y: scroll">
+                  <div class="row">
+                    <div class="col-md-6" style="color:white">
+                      <center><span style="color:white">Buy <span class="currentTokenOne"></span></span></center>
+                      <table class="table-bordered buy_table orderBookTable">
+                        <thead>
+                          <th>Vol</th>
+                          <th>Amount</th>
+                          <th>Bid</th>
+                        </thead>
+                        <tbody class="order_sell"></tbody>
+                      </table>
+                    </div>
+                    <div class="col-md-6" style="color:white">
+                      <center><span style="color:white">Sell <span class="currentTokenOne"></span></span></center>
+                      <table class="table-bordered sell_table orderBookTable">
+                        <thead>
+                          <th>Ask</th>
+                          <th>Amount</th>
+                          <th>Vol</th>
+                        </thead>
+                        <tbody class="order_buy"></tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="panel-508677">
+                <h2 class="main-title"><span>Orders</span></h2>
+                <div id="orders_table" style="width: 100%; height: 299px;overflow: scroll">
+                  <table style="width: 100%" class="orders_table " border="1px">
+                    <thead>
+                      <th>Type</th>
+                      <th>Amount</th>
+                      <th>Price</th>
+                      <th></th>
+                    </thead>
+                    <tbody class="orders_tbody">
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <ul class="nav nav-tabs stock-tabs-info">
+              <li> <a href="#panel-508676" id="look_book_orders" data-toggle="tab">order books </a> </li>
+              <li> <a href="#panel-364342" data-toggle="tab">Change Pairing</a> </li>
+              <!-- <li> <a href="#panel-508674" data-toggle="tab">Change Graph frequency</a> </li> -->
+              <li> <a class="active" href="#panel-508675" data-toggle="tab">Graphic analysis Tools</a> </li>
+              
+              <li> <a href="#panel-508677" id="look_book_orders" data-toggle="tab">orders </a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <div class="tokenOne-stock">
+          <h2 class="main-title"><span class="stock-img"><img class="img-fluid" src="images/white-logo.png"></span><span>Genevieve</span></h2>
+          <div class="tokenOne-tabel">
+            <table>
+              <tbody>
+                <tr>
+                  <th>LAST:</th>
+                  <td><div class="gxcv-detail-stock"><span>usd</span></div>
+                    <div class="gxcv-detail-stock"><span>eth</span></div></td>
+                </tr>
+                <tr>
+                  <th><img src="images/sorting.png" alt="">VOL:</th>
+                  <td><div class="gxcv-detail-stock volEth font10px"><span>usd</span></div>
+                    <div class="gxcv-detail-stock volToken font10px"><span>eth</span></div></td>
+                </tr>
+                <tr>
+                  <th>BID:</th>
+                  <td>
+                    <div class="gxcv-detail-stock bid_value font10px"><span>usd</span></div>
+                    <!-- <div class="gxcv-detail-stock"><br> <span><br></span></div> -->
+                  </td>
+                </tr>
+                <tr>
+                  <th>ASk:</th>
+                  <td><div class="gxcv-detail-stock ask_value font10px"><span>usd</span></div>
+                    <!-- <div class="gxcv-detail-stock"><br> <span><br></span></div></td> -->
+                </tr>
+                <tr>
+                  <th>24h High:</th>
+                  <td><div class="gxcv-detail-stock high_price font10px"><span>usd</span></div>
+                    <!-- <div class="gxcv-detail-stock">0.115864 <span>eth</span></div></td> -->
+                </tr>
+                <tr>
+                  <th>24h LOW:</th>
+                  <td>
+                    <div class="gxcv-detail-stock low_price font10px"><span>usd</span></div>
+                    <!-- <div class="gxcv-detail-stock">0.115864 <span>eth</span></div> -->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- card info section-->
+<section class="card-mb-3" style="margin-bottom:35px">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="head-title">
+            <div class="row">
+              <div class="col-md-8">
+                <h2 class="main-title"><span>BUY <span class="currentTokenOne"></span></span></h2>
+              </div>
+              <div class="col-md-4">
+                  <span class="sub-title deposit_ether"><span style="font-size:14px">Deposit <span class="currentTokenTwo"></span></span></span>
+                  <span class="sub-title withdraw_ether"><span style="font-size:14px">Withdraw <span class="currentTokenTwo"></span></span></span>
+              </div>
+            </div>
+
+          </div>
+          <div class="status-info">
+            <label>You have:</label>
+            <span id="eth_bal_buy">0.000000 ETH</span> </div>
+          <div class="Fill-info">
+            <form class="buy" role="" action="">
+              <div class="form-group">
+                <label>Price:</label>
+                <input class="form-control" type="text" id="buy_price"//>
+              </div>
+              <div class="form-group">
+                <label>Amount:</label>
+                <input class="form-control" type="text" id="buy_amount"/>
+              </div>
+              <div class="form-group">
+                <label>Total:</label>
+                <input class="form-control" type="text"  id="buy_total"/>
+              </div>
+              <div class="form-group">
+                <label>0.2% Fee:</label>
+                <input class="form-control" type="text" id="buy_fee"/>
+              </div>
+              <p class="button">
+                <input class="dark-btn" type="submit" value="buy" id="order_buy_btn">
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="head-title">
+            <div class="row">
+              <div class="col-md-8">
+                <h2 class="main-title"><span style="font-size: 20px;">Sell <span class="currentTokenOne"></span></span></h2>
+              </div>
+              <div class="col-md-4">
+                <span class="sub-title deposit_token"><span style="font-size: 14px;">Deposit <span class="currentTokenOne"></span></span></span>
+                <span class="sub-title withdraw_token"><span style="font-size: 14px;">Withdraw <span class="currentTokenOne"></span></span></span>
+              </div>
+            </div>
+            
+          </div>
+          <div class="status-info">
+            <label>You have:</label>
+            <span id="tokenOne_bal_sell">0.000000 <span class="currentTokenOne"></span></span> </div>
+          <div class="Fill-info">
+            <form class="buy" role="" action="">
+              <div class="form-group">
+                <label>Price:</label>
+                <input class="form-control" type="text" id="sell_price"/>
+              </div>
+              <div class="form-group">
+                <label>Amount:</label>
+                <input class="form-control" type="text" id="sell_amount"/>
+              </div>
+              <div class="form-group">
+                <label>Total:</label>
+                <input class="form-control" type="text" id="sell_total"/>
+              </div>
+              <div class="form-group">
+                <label>0.2% Fee:</label>
+                <input class="form-control" type="text" id="sell_fee"/>
+              </div>
+              <p class="button">
+                <input class="light-btn" type="submit" value="sell" id="order_sell_btn">
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body" id="myModalBody">
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"  data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="depositEtherModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Deposit <div class="currentTokenTwo"></div></h4>
+      </div>
+      <div class="modal-body" id="myModalBody">
+        <form action="">
+          <div class="form-group">
+            <label>Ether</label>
+            <input type="text" id="ether_to_deposit" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="deposit_ether_btn" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="depositTokenModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Deposit <div class="currentTokenOne"></div></h4>
+      </div>
+      <div class="modal-body" id="myModalBody">
+        <form action="">
+          <div class="form-group">
+            <label>Token</label>
+            <input type="text" id="token_to_deposit" class="form-control">
+          </div>
+          <div class="form-group ">
+            <label>Allowance</label>
+            <input type="text" readonly="readonly" id="allowance_result" class="form-control">
+            <div class="allowance_message muted"></div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="deposit_token_btn" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="withdrawTokenModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Withdraw <div class="currentTokenOne"></div></h4>
+      </div>
+      <div class="modal-body" id="myModalBody">
+        <form action="">
+          <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" id="token_to_withdraw" step="0.0000000001" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="withdraw_token_btn" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="withdrawEtherModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Withdraw <div class="currentTokenTwo"></div></h4>
+      </div>
+      <div class="modal-body" id="myModalBody">
+        <form action="">
+          <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" id="ether_to_withdraw" step="0.0001" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="withdraw_ether_btn" data-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<div class="modal fade" id="waiting_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Waiting</h4>
+      </div>
+      <div class="modal-body" id="myModalBody">
+        <center>
+          <p>
+            LOADING....
+          </p>
+        </center>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div> 
+<!-- xhtml --> 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.bundle.min.js"></script> 
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<!-- <script src="js/amcharts.js"></script>  -->
+<!-- <script src="js/serial.js"></script>  -->
+<!-- <script src="js/chartdata.js"></script>  -->
+<!-- <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
+
+<!-- <script src="js/app.js"></script>  -->
+<script src="js/functions.js"></script> 
+<script src="js/main.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+ <!-- Start of ethernitylivehelp Zendesk Widget script --> 
+<script>
+/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="ethernitylivehelp.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
+/*]]>*/
+</script>
+<!-- End of ethernitylivehelp Zendesk Widget script -->
+
+
+
+
+
+</body>
+</html>
